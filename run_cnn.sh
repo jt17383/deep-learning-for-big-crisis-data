@@ -33,7 +33,7 @@ for ratio in ${dr_ratios[@]}; do
 							echo "INFORMATION: dropout_ratio=$ratio minibatch-size=$mb filter-nb=$nb_filter filt_len=$filt_len pool_len=$pool_len vocab=$vocab" >> $log;
 							echo "----------------------------------------------------------------------" >> $log;
 
-							THEANO_FLAGS=mode=FAST_RUN,device=gpu,floatX=float32 python $CNN_SCR \
+							THEANO_FLAGS=mode=FAST_RUN,device=gpu,floatX=float32 python3 $CNN_SCR \
 							--data-dir=$data --model-dir=$MODEL_DIR -i $init_type -f $emb_file\
 							--vocabulary-size=$vocab --dropout_ratio=$ratio --minibatch-size=$mb\
 							--nb_filter=$nb_filter --filter_length=$filt_len --pool_length=$pool_len\

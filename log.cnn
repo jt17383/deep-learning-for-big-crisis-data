@@ -1,0 +1,67 @@
+INFORMATION: dropout_ratio=0.2 minibatch-size=128 filter-nb=150 filt_len=2 pool_len=3 vocab=90
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+INFORMATION: dropout_ratio=0.2 minibatch-size=128 filter-nb=150 filt_len=2 pool_len=3 vocab=90
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+INFORMATION: dropout_ratio=0.2 minibatch-size=128 filter-nb=150 filt_len=2 pool_len=3 vocab=90
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+INFORMATION: dropout_ratio=0.2 minibatch-size=128 filter-nb=150 filt_len=2 pool_len=3 vocab=90
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+INFORMATION: dropout_ratio=0.2 minibatch-size=128 filter-nb=150 filt_len=2 pool_len=3 vocab=90
+----------------------------------------------------------------------
+Loading data...
+./data/nn_data/test.csv
+----------------------------------------------------------------------
+INFORMATION: dropout_ratio=0.2 minibatch-size=128 filter-nb=150 filt_len=2 pool_len=3 vocab=90
+----------------------------------------------------------------------
+Loading data...
+./data/nn_data/test.csv
+./data/nn_data/dev.csv
+./data/nn_data/train.csv
+Nb of tweets: train: 1712 test: 484 dev: 242
+Total vocabulary size: 5770
+Pruned vocabulary size: 90.0% =5193
+('Random seed', '113')
+Loading pre-trained word2vec embeddings......
+ Number of words found in emb matrix: 0 of 5193
+............................
+1712 train tweets
+484 test  tweets
+242 dev   tweets
+5193 vocabulary size
+6 different classes
+............................
+** optimizer: adadelta
+Building model: convolutional neural network (cnn)
+Doing classification with class # 6
+Training and validating ....
+----------------------------------------------------------------------
+INFORMATION: dropout_ratio=0.2 minibatch-size=128 filter-nb=150 filt_len=2 pool_len=3 vocab=90
+----------------------------------------------------------------------
+Loading data...
+./data/nn_data/test.csv
+./data/nn_data/dev.csv
+./data/nn_data/train.csv
+Nb of tweets: train: 1712 test: 484 dev: 242
+Total vocabulary size: 5770
+Pruned vocabulary size: 90.0% =5193
+('Random seed', '113')
+Loading pre-trained word2vec embeddings......
+ Number of words found in emb matrix: 0 of 5193
+............................
+1712 train tweets
+484 test  tweets
+242 dev   tweets
+5193 vocabulary size
+6 different classes
+............................
+** optimizer: adadelta
+Building model: convolutional neural network (cnn)
+Doing classification with class # 6
+Training and validating ....
+Train on 1712 samples, validate on 242 samples
+Epoch 1/25
+----------------------------------------------------------------------

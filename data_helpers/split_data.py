@@ -33,8 +33,8 @@ with open(in_file, 'rU') as fin:
 skf = StratifiedKFold(y, n_folds=5, shuffle=True) # n_folds = sum of train to dev to test ratio
 
 for train_dev_index, test_index in skf:
-	train_dev = zip(i[train_dev_index], X[train_dev_index], y[train_dev_index])
-	test = zip(i[test_index], X[test_index], y[test_index])
+	train_dev = list(zip(i[train_dev_index], X[train_dev_index], y[train_dev_index]))
+	test = list(zip(i[test_index], X[test_index], y[test_index]))
 
 #-----------------------------------------
 #--> intermidate files: train+dev file <--
@@ -68,8 +68,8 @@ with open("%s_train_dev.csv" %filename) as fin:
 skf = StratifiedKFold(yy, n_folds=8, shuffle=True) # n_folds = sum of train to dev ratio
 
 for train_index, dev_index in skf:
-        train = zip(ii[train_index], XX[train_index], yy[train_index])
-        dev = zip(ii[dev_index], XX[dev_index], yy[dev_index])
+        train = list(zip(ii[train_index], XX[train_index], yy[train_index]))
+        dev = list(zip(ii[dev_index], XX[dev_index], yy[dev_index]))
 
 #--------------------
 #--> save outputs <--

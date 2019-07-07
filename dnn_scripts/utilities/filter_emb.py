@@ -1,4 +1,4 @@
-from __future__ import absolute_import
+
 from six.moves import cPickle
 import gzip
 import random
@@ -13,7 +13,7 @@ GG_embfile="/home/local/QCRI/sjoty/dialog-act/data/word2vec_GoogleNews/GoogleNew
 
 """ load the word embeddings """
 
-print "Loading pre-trained word2vec embeddings......"
+print("Loading pre-trained word2vec embeddings......")
 
 if CR_embfile.endswith(".gz"):
     cr_f = gzip.open(CR_embfile, 'rb')
@@ -37,7 +37,7 @@ print (gg_vec_size_got)
 
 for line in cr_f: # read from the emb file
     all_ent   = line.split()
-    word, vec = all_ent[0].lower(), map (float, all_ent[1:])
+    word, vec = all_ent[0].lower(), list(map (float, all_ent[1:]))
     print (vec)    
 
 cr_f.close()
@@ -47,7 +47,7 @@ cr_f.close()
 def load_emb(embfile, vocab_idmap, index_from=3, start_char=1, oov_char=2, padding_char=0, vec_size=300):
     """ load the word embeddings """
 
-    print "Loading pre-trained word2vec embeddings......"
+    print("Loading pre-trained word2vec embeddings......")
 
     if embfile.endswith(".gz"):
         f = gzip.open(embfile, 'rb')
@@ -57,8 +57,8 @@ def load_emb(embfile, vocab_idmap, index_from=3, start_char=1, oov_char=2, paddi
     vec_size_got = int ( f.readline().strip().split()[1]) # read the header to get vec dim
 
     if vec_size_got != vec_size:
-        print " vector size provided and found in the file don't match!!!"
-        raw_input(' ')
+        print(" vector size provided and found in the file don't match!!!")
+        input(' ')
         exit(1)
 
     # load Embedding matrix
@@ -69,14 +69,14 @@ def load_emb(embfile, vocab_idmap, index_from=3, start_char=1, oov_char=2, paddi
 
     for line in f: # read from the emb file
         all_ent   = line.split()
-        word, vec = all_ent[0].lower(), map (float, all_ent[1:])
+        word, vec = all_ent[0].lower(), list(map (float, all_ent[1:]))
 
-        if vocab_idmap.has_key(word):
+        if word in vocab_idmap:
             wrd_found[word] = 1
             wid    = vocab_idmap[word] + index_from
             E[wid] = np.array(vec)
 
     f.close()
-    print " Number of words found in emb matrix: " + str (len (wrd_found)) + " of " + str (len(vocab_idmap))
+    print(" Number of words found in emb matrix: " + str (len (wrd_found)) + " of " + str (len(vocab_idmap)))
 
     return E
